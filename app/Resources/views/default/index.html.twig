@@ -1,8 +1,6 @@
 {% extends 'base.html.twig' %}
-
-
 {% block body %} 
- 
+
     <div class="container-fluid alert alert-dark alert-dismissible fade show pt-0 pb-2"  role="alert" >  
         <div class="row">
             <div class="col-10 mx-auto"> 
@@ -15,33 +13,37 @@
             <span aria-hidden="true">&times;</span>  
         </button>  
     </div> 
- 
-    <div class="container-fluid">   
+
+    <div class="container">   
         <div class="row">   
             <div class="col-10 mx-auto">   
                 <h6 class="lead">Las discotecas.</h6> 
             </div>  
         </div> 
-        <div class="row bg-white">   
-            <div class="col-8 mx-auto ">  
-                {# for disc in discotecas %}    
-                    <div class="media py-2">  
-                        <img class="my-auto card-img" style="width:60px" src="{{ disc.getImagen() }}" alt="logo empresa">
-                        <div class="media-body">    
-                            <div class="mx-4 d-flex justify-content-between ">   
-                                <h4 class="p-0"> {{ offer.getNombre() }}     
-                                         
-                                </h4>                      
-                                    <a href="{{ path('offers_show', {'id': disc.getId()}) }}" class="btn btn-outline-primary">More details...</a>  
-                            </div>      
-                                         
-                        </div>  
-                    </div>   
-                    <hr/>  
-                {% endfor #} 
-            </div>   
-        </div>   
-    </div> 
+        <div class="row">
+            <div class="col-6 mx-auto">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="https://www.urbanmgz.com/media/bir/686x431-privilege-zgfyeoeazqgyqy.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">discotecas</h5>
+                        <p class="card-text">Las mejores discotecas de toda navarra. Una experiencia inolvidable.</p>
+                        <a href="{{ path('discoteca_index') }}" class="btn btn-primary">Ver discotecsa</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 mx-auto">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="https://i.pinimg.com/564x/b7/fe/a7/b7fea7d08f567e0e2b183568cc358aa7.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Eventos</h5>
+                        <p class="card-text">Muchisimos eventos de todo tipo</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>   
+
+
 {% endblock %} 
- 
- 

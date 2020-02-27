@@ -1,3 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>{% block title %}Artean{% endblock %}</title>
+    {% block stylesheets %}
+        <link rel="stylesheet"
+              href="{{asset('build/app.css')}}">
+        <style>
+            textarea {overflow:scroll; max-height:300px}
+        </style>
+    {% endblock %}
+</head>
 
+<body>
+
+{% block navbar %}
  
- 
+        {% include 'navbar/navbar.html.twig' %}
+{% endblock %}
+
+{% block body %}  {% endblock %}
+
+{% block javascripts %}
+    <script src="{{asset('build/app.js')}}">
+
+    </script>
+{% endblock %}
+
+</body>
+<footer class="footer">
+            {% block footer %}{% endblock %}
+</footer>
+
+</html>

@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+   
+
+    <div class="container">   
+        <div class="row">   
+            <div class="col-8 mx-auto">   
+                <h6 class="lead">Estas son las discotecas </h6> 
+            </div>  
+            <div class="col-4 mx-auto">   
+                <a class="btn btn-primary" href="{{ path('discoteca_new') }}">Create a new discoteca</a>
+            </div> 
+            
+        </div> 
+            <br>
+            <hr>
+            <br>
+        <div class="row bg-white">   
+            
+                {%  for disc in discotecas %}   
+                    <div class="col-md-4 mx-auto ">  
+                    <div class="card-deck">
+                        <div class="card">
+                            <img class="card-img-top" src="{{ disc.imagen }}" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ disc.nombre }}</h5>
+                                <p class="card-text">Ubicacion: {{ disc.ubicacion }}
+                                </p>
+                                <p class="card-text">CIF: {{ disc.cif }}
+                                </p>
+                            </div>
+                            <div class="card-footer">
+                                <a class="btn btn-light" href="{{ path('discoteca_show', { 'id': disc.id }) }}">Ver discoteca</a>
+                                <a class="btn btn-light" href="{{ path('discoteca_edit', { 'id': disc.id }) }}">Editar discoteca</a>
+                            </div>
+                        </div>
+
+                    </div>  
+                    <hr/>  
+                     </div>
+                {% endfor %} 
+              
+        </div>   
+    </div>
+
+   
+{% endblock %}

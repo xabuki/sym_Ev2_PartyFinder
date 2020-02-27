@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Rrpp</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ rRPP.id }}</td>
+            </tr>
+            <tr>
+                <th>Username</th>
+                <td>{{ rRPP.username }}</td>
+            </tr>
+            <tr>
+                <th>Password</th>
+                <td>{{ rRPP.password }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ rRPP.email }}</td>
+            </tr>
+            <tr>
+                <th>Nombre</th>
+                <td>{{ rRPP.nombre }}</td>
+            </tr>
+            <tr>
+                <th>Cuentainstagram</th>
+                <td>{{ rRPP.cuentaInstagram }}</td>
+            </tr>
+            <tr>
+                <th>Numtel</th>
+                <td>{{ rRPP.numTel }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('rrpp_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('rrpp_edit', { 'id': rRPP.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

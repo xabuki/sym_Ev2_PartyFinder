@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Entradas list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Imagenentrada</th>
+                <th>Horalimite</th>
+                <th>Precio</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entrada in entradas %}
+            <tr>
+                <td><a href="{{ path('entrada_show', { 'id': entrada.id }) }}">{{ entrada.id }}</a></td>
+                <td>{{ entrada.imagenEntrada }}</td>
+                <td>{{ entrada.horaLimite }}</td>
+                <td>{{ entrada.precio }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('entrada_show', { 'id': entrada.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('entrada_edit', { 'id': entrada.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('entrada_new') }}">Create a new entrada</a>
+        </li>
+    </ul>
+{% endblock %}

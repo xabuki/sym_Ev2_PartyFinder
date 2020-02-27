@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Discoteca creation</h1>
+
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+        
+    {{ form_end(form) }}
+
+    <div>
+         <a href="{{ path('discoteca_index') }}"><span class="p-2 glyphicon glyphicon-list"></span>volver</a>
+    </div>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Discoteca</h1>
+
+     <div class="col-md-4 mx-auto ">  
+                    <div class="card-deck">
+                        <div class="card">
+                            <img class="card-img-top" src="{{ discoteca.imagen }}" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ discoteca.nombre }}</h5>
+                                <p class="card-text">Ubicacion: {{ discoteca.ubicacion }}
+                                </p>
+                                <p class="card-text">CIF: {{ discoteca.cif }}
+                                </p>
+                            </div>
+                            <div class="card-footer">
+                                
+                                <a class="btn btn-light" href="{{ path('discoteca_edit', { 'id': discoteca.id }) }}">Editar discoteca</a>
+                                <a href="{{ path('discoteca_index') }}"><span class="p-2 glyphicon glyphicon-list"></span>volver</a>
+                            </div>
+                        </div>
+
+                    </div>  
+                    <hr/>  
+                     </div>
+
+{% endblock %}

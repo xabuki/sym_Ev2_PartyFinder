@@ -1,0 +1,68 @@
+
+
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+   <div class="container">
+       <div class="row">
+           <div class="col-10 mx-auto">
+               <div class="card">
+                   <div class="card-body">
+                       <h3 class="card-title">Discoteca</h3>
+                       <div class="d-flex justify-content-between">
+                           <h4 class="card-subtitle mb-2 text-muted">Editar</h4>
+                           <a href="{{ path('discoteca_index') }}"><span class="p-2 glyphicon glyphicon-list"></span>volver</a>
+                           <div class="p-2">
+                               {{ form_start(delete_form) }}
+                                   <input type="submit" value="Delete" class="btn btn-danger">      
+                               {{ form_end(delete_form) }}
+                           </div>
+                       </div>
+
+                       <div class="card-text">
+                           {{ form_start(edit_form, {'action': path('discoteca_edit',{'id':discoteca.id}), 'method': 'POST'}) }}
+                           <div class="border border-white row">
+                               <label for="nombre"
+                                      class="col-4 col-form-label">{{ form_label(edit_form.nombre) }}</label>
+                               <div class="col-8">
+                                   {{ form_widget(edit_form.nombre) }}
+                               </div>
+                           </div>
+                           <div class="border border-white  row">
+                               <label for="ubicacion"
+                                      class="col-4 col-form-label">{{ form_label(edit_form.ubicacion) }}</label>
+                               <div class="col-8">
+                                   {{ form_widget(edit_form.ubicacion) }}
+                               </div>
+                           </div>
+                               <div class="border border-white  row">
+                               <label for="imagen"
+                                      class="col-4 col-form-label">{{ form_label(edit_form.imagen) }}</label>
+                               <div class="col-8">
+                                   {{ form_widget(edit_form.imagen) }}
+                               </div>
+                           </div>
+                            <div class="border border-white  row">
+                               <label for="cif"
+                                      class="col-4 col-form-label">{{ form_label(edit_form.cif) }}</label>
+                               <div class="col-8">
+                                   {{ form_widget(edit_form.cif) }}
+                               </div>
+                           </div>
+                           <div class="d-flex ">
+                               <div class="p-2">
+                                   {{ form_widget(edit_form.save) }}
+                               </div>
+                           </div>
+                       </div>
+                       {{ form_end(edit_form) }}
+                   </div>
+
+               </div>
+
+           </div>
+       </div>
+   </div>
+
+{% endblock %}

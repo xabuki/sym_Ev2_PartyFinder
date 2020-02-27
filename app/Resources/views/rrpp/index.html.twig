@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Rrpps list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Username</th>
+                <th>Password</th>
+                <th>Email</th>
+                <th>Nombre</th>
+                <th>Cuentainstagram</th>
+                <th>Numtel</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for rRPP in rRPPs %}
+            <tr>
+                <td><a href="{{ path('rrpp_show', { 'id': rRPP.id }) }}">{{ rRPP.id }}</a></td>
+                <td>{{ rRPP.username }}</td>
+                <td>{{ rRPP.password }}</td>
+                <td>{{ rRPP.email }}</td>
+                <td>{{ rRPP.nombre }}</td>
+                <td>{{ rRPP.cuentaInstagram }}</td>
+                <td>{{ rRPP.numTel }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('rrpp_show', { 'id': rRPP.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('rrpp_edit', { 'id': rRPP.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('rrpp_new') }}">Create a new rRPP</a>
+        </li>
+    </ul>
+{% endblock %}

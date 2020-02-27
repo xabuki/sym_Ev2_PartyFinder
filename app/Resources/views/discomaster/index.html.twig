@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Discomasters list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Username</th>
+                <th>Password</th>
+                <th>Email</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for discoMaster in discoMasters %}
+            <tr>
+                <td><a href="{{ path('discomaster_show', { 'id': discoMaster.id }) }}">{{ discoMaster.id }}</a></td>
+                <td>{{ discoMaster.username }}</td>
+                <td>{{ discoMaster.password }}</td>
+                <td>{{ discoMaster.email }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('discomaster_show', { 'id': discoMaster.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('discomaster_edit', { 'id': discoMaster.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('discomaster_new') }}">Create a new discoMaster</a>
+        </li>
+    </ul>
+{% endblock %}

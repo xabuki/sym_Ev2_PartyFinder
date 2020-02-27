@@ -15,12 +15,12 @@ class DefaultController extends Controller
     public function indexAction(Request $request)
     {
         $discos=[];
-      //  $em = $this->getDoctrine();
-     //  $discos = $em->getRepository(Discoteca::class)->findAllDiscotecas(); 
+        $em = $this->getDoctrine();
+       $discos = $em->getRepository(Discoteca::class)->findAllDiscotecas(); 
         
         // replace this example code with whatever you need
         return $this->render('default/index.html.twig',array(
-         //  'discotecas' => $discos ,
+           'discotecas' => $discos ,
         ));
         
     }
